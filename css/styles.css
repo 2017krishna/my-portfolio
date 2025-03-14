@@ -55,6 +55,24 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
+button.toggle-details {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button.toggle-details:hover {
+    background-color: #0056b3;
+}
+
 @media only screen and (max-width: 600px) {
     header, footer {
         padding: 10px;
