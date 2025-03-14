@@ -4,6 +4,9 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header, footer {
@@ -14,8 +17,8 @@ header, footer {
 }
 
 footer {
-    background-color: #3ea2e4;
-    color: white;
+    background-color: #5f76f7;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 0px;
     position: fixed;
@@ -29,6 +32,10 @@ section {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section#contact {
+    margin-bottom: 50px;
 }
 
 h2 {
@@ -72,7 +79,7 @@ button.toggle-details {
 button.toggle-details:hover {
     background-color: #0056b3;
 }
-
+ 
 @media only screen and (max-width: 600px) {
     header, footer {
         padding: 10px;
