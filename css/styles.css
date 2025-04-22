@@ -32,6 +32,7 @@ section {
     margin: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
 }
 
 section#contact {
@@ -72,6 +73,8 @@ button.toggle-details {
 
 button.toggle-details:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 /* General Dark Mode Styles */
@@ -95,7 +98,25 @@ button#dark-mode-toggle {
     padding: 5px 10px;
     cursor: pointer;
 }
- 
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project {
+    animation: fadeIn 1s ease-in-out;
+    animation-delay: 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
 @media only screen and (max-width: 600px) {
     header, footer {
         padding: 10px;

@@ -46,6 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    projects.forEach((project, index) => {
+        project.style.animationDelay = `${index * 0.25}s`;
+        project.style.opacity = '1';
+    });
+
     const form = document.getElementById('contact-form');
     const errorMessage = document.getElementById('error-message');
 
