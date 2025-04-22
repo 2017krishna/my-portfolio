@@ -31,21 +31,37 @@
         <!-- Projects Section -->
         <section id="projects">
             <h2>My Projects</h2>
-            <div class="project">
-                <h3>Project 1</h3>
+            <!-- Filter Dropdown -->
+            <label for="project-filter">Filter by Category:</label>
+            <select id="project-filter">
+                <option value="all">All</option>
+                <option value="web">Web Development</option>
+                <option value="mobile">Mobile Apps</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- Project List -->
+            <div class="project" data-category="web">
+                <h3>Portfolio Website</h3>
                 <button class="toggle-details">Show Details</button>
                 <div class="project-details" style="display: none;">
-                    <p>Details about Project 1...</p>
+                    <p>A personal portfolio website showcasing my projects and skills.</p>
                 </div>
             </div>
-            <div class="project">
-                <h3>Project 2</h3>
+            <div class="project" data-category="mobile">
+                <h3>Weather App</h3>
                 <button class="toggle-details">Show Details</button>
                 <div class="project-details" style="display: none;">
-                    <p>Details about Project 2...</p>
+                    <p>A mobile app that provides real-time weather updates and forecasts.</p>
                 </div>
             </div>
-            <!-- Add more projects as needed -->
+            <div class="project" data-category="other">
+                <h3>Task Manager</h3>
+                <button class="toggle-details">Show Details</button>
+                <div class="project-details" style="display: none;">
+                    <p>A task management tool to organize and prioritize daily tasks.</p>
+                </div>
+            </div>
         </section>
 
         <!-- Contact Section -->

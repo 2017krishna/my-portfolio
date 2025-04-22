@@ -1,15 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.toggle-details');
+    const toggleButton = document.getElementById("dark-mode-toggle");
+    const body = document.body;
 
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const details = button.nextElementSibling;
-            if (details.style.display === 'none') {
-                details.style.display = 'block';
-                button.textContent = 'Hide Details';
+    if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("dark-mode");
+    }
+
+    toggleButton.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
+    });
+
+    const detailButtons = document.querySelectorAll(".toggle-details");
+    detailButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const projectDetails = button.nextElementSibling;
+            if (projectDetails.style.display === "none" || !projectDetails.style.display) {
+                projectDetails.style.display = "block";
+                button.textContent = "Hide Details";
             } else {
-                details.style.display = 'none';
-                button.textContent = 'Show Details';
+                projectDetails.style.display = "none";
+                button.textContent = "Show Details";
+            }
+        });
+    });
+
+    const filterDropdown = document.getElementById("project-filter");
+    const projects = document.querySelectorAll(".project");
+
+    filterDropdown.addEventListener("change", () => {
+        const selectedCategory = filterDropdown.value;
+
+        projects.forEach((project) => {
+            const category = project.getAttribute("data-category");
+
+            if (selectedCategory === "all" || category === selectedCategory) {
+                project.style.display = "block";
+            } else {
+                project.style.display = "none";
             }
         });
     });
@@ -47,23 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!valid) {
             errorMessage.style.display = 'block';
             event.preventDefault();
-        }
-    });
-
-    const toggleButton = document.getElementById("dark-mode-toggle");
-    const body = document.body;
-
-    if (localStorage.getItem("darkMode") === "enabled") {
-        body.classList.add("dark-mode");
-    }
-
-    toggleButton.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
-
-        if (body.classList.contains("dark-mode")) {
-            localStorage.setItem("darkMode", "enabled");
-        } else {
-            localStorage.setItem("darkMode", "disabled");
         }
     });
 });
