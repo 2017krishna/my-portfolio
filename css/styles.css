@@ -27,6 +27,7 @@ footer {
 }
 
 section {
+    color: #ffffff;
     background-color: #1e1e1e;
     padding: 20px;
     margin: 20px;
@@ -40,7 +41,7 @@ section#contact {
 }
 
 h2 {
-    color: #333;
+    color: #ffffff;
 }
 
 nav ul {
@@ -77,7 +78,6 @@ button.toggle-details:hover {
     transition: transform 0.3s ease;
 }
 
-/* General Dark Mode Styles */
 body.dark-mode {
     background-color: #121212;
     color: #ffffff;
