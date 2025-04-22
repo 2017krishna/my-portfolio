@@ -63,21 +63,35 @@ nav ul li a:hover {
 }
 
 button.toggle-details {
-    background-color: #007BFF;
+    background-color: #007bff;
+    color: #ffffff;
     border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 0;
+    padding: 5px 10px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 button.toggle-details:hover {
     background-color: #0056b3;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header.dark-mode, footer.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+section.dark-mode {
+    color: #ffffff;
+}
+
+button#dark-mode-toggle {
+    margin-left: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
  
 @media only screen and (max-width: 600px) {
